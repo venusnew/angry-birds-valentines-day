@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Angry Birds Valentines day Game Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angry Birds Valentine's Day</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
+
 <body>
-    <object width="800" height="600" data="http://angrybirdsgames.com/angry-birds-valentines-day/angry-birds-valentines-day-7100.swf"></object>
+    <h1>Angry Birds Valentine's Day</h1>
+    <div>
+        <embed src="angry-birds-valentines-day-7100.swf" width="800" height="600">
+    </div>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.querySelector("embed");
+            container.parentNode.replaceChild(player, container);
+            player.load(container.attributes.src.value);
+        });
+    </script>
 </body>
+
 </html>
